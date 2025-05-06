@@ -11,3 +11,7 @@ for (let y = 0; y < columnCount; y++) {
 }
 
 createGrid(16, 16);
+
+gridDiv.addEventListener("mouseover", () +> {
+    gridDiv.style.
+}
