@@ -6,13 +6,17 @@ for (let y = 0; y < columnCount; y++) {
    const gridDiv = document.createElement("div");
    gridDiv.classList.add("grid-point");
    container.appendChild(gridDiv);
-   gridDiv.textContent = ".";
+   gridDiv.addEventListener("mouseover", () => {
+   gridDiv.style.backgroundColor = "red";
+  });
   }
  }
-};
+}
 
-console.log;
 createGrid(16, 16);
 
-console.log;
+gridDiv.addEventListener("mouseover", () => {
+   gridDiv.style.backgroundColor = "red";
+});
 
+//gridDiv.textContent = ".";
