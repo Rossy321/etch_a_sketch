@@ -10,9 +10,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align align-items: center;
-    width: 135px;
+    width: 200px;
+    height: 200px;
 }
+
+.grid-point {
+    width: 12.5px;
+    height: 12.5px;
+
+}
+
+
+
+
 
 
 
