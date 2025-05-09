@@ -1,4 +1,5 @@
 const container = document.getElementById("container");
+container.style.border = "2px solid black";
 
 function createGrid (rowCount, columnCount) {
 for (let x = 0; x < rowCount; x++) {
@@ -15,8 +16,6 @@ for (let y = 0; y < columnCount; y++) {
 
 createGrid(16, 16);
 
-gridDiv.addEventListener("mouseover", () => {
-   gridDiv.style.backgroundColor = "red";
-});
+
 
 //gridDiv.textContent = ".";
