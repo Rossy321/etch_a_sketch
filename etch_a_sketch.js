@@ -24,8 +24,7 @@ for (let y = 0; y < columnCount; y++) {
    const gridDiv = document.createElement("div");
    gridDiv.classList.add("grid-point");
    gridContainer.appendChild(gridDiv);
-   gridDiv.style.width = 960/rowCount + "px";
-   gridDiv.style.height = 960/columnCount + "px";
+   gridDiv.style.flex = `0 0 calc(100% / ${rowCount})`;
    gridDiv.addEventListener("mouseover", () => {
    gridDiv.style.backgroundColor = "red";
   });
@@ -38,6 +37,7 @@ createGrid(16, 16);
 
 resetButton.addEventListener("click", () => { 
    let squares = prompt("Number of squares per side for new grid?");
+   if (squares >= 100 ) squares = prompt ("Please enter a number less than 100");
    let squaresNo = Number(squares);
    gridContainer.innerHTML = "";
    createGrid(squaresNo, squaresNo);
