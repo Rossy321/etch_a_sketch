@@ -15,18 +15,23 @@ resetButton.id = "resetButton";
 
 gridContainer.style.border = "2px solid black";
 
-
+let randomColor = function randomRGBValue () {
+   const r = Math.floor(Math.random() * 256);
+   const b =  Math.floor(Math.random() * 256);
+   const g = Math.floor(Math.random() * 256); 
+   return `rgb(${r}, ${g}, ${b})`;
+}
 
 
 function createGrid (rowCount, columnCount) {
 for (let x = 0; x < rowCount; x++) {
 for (let y = 0; y < columnCount; y++) {
    const gridDiv = document.createElement("div");
-   gridDiv.classList.add("grid-point");
+   gridDiv.classList.add("gridDiv");
    gridContainer.appendChild(gridDiv);
    gridDiv.style.flex = `0 0 calc(100% / ${rowCount})`;
    gridDiv.addEventListener("mouseover", () => {
-   gridDiv.style.backgroundColor = "red";
+   gridDiv.style.backgroundColor = randomColor();
   });
   }
  }

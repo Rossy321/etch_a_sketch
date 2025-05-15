@@ -43,8 +43,7 @@ body {
    
 }
 
-.grid-point { 
-    flex: 0 0 calc(100% / 16);
+.gridDiv { 
     aspect-ratio: 1/1;
 
 }
