@@ -15,7 +15,7 @@ resetButton.id = "resetButton";
 
 gridContainer.style.border = "2px solid black";
 
-let randomColor = function randomRGBValue () {
+ function randomRGBValue () {
    const r = Math.floor(Math.random() * 256);
    const b =  Math.floor(Math.random() * 256);
    const g = Math.floor(Math.random() * 256); 
@@ -30,12 +30,17 @@ for (let y = 0; y < columnCount; y++) {
    gridDiv.classList.add("gridDiv");
    gridContainer.appendChild(gridDiv);
    gridDiv.style.flex = `0 0 calc(100% / ${rowCount})`;
+   gridDiv.hoverCount = 0;
    gridDiv.addEventListener("mouseover", () => {
-   gridDiv.style.backgroundColor = randomColor();
-  });
+   gridDiv.style.backgroundColor = randomRGBValue();
+   if (gridDiv.hoverCount < 10) {
+      gridDiv.hoverCount++;
+      gridDiv.style.opacity = gridDiv.hoverCount * 0.1;
   }
+  });
  }
-}
+ }
+} 
 
 createGrid(16, 16);
 
@@ -47,3 +52,8 @@ resetButton.addEventListener("click", () => {
    gridContainer.innerHTML = "";
    createGrid(squaresNo, squaresNo);
    });
+
+
+
+
+      
