@@ -1,4 +1,3 @@
-
 const buttonContainer = document.getElementById("buttonContainer");
 const gridContainer = document.getElementById("gridContainer");
 
@@ -31,8 +30,9 @@ for (let y = 0; y < columnCount; y++) {
    gridContainer.appendChild(gridDiv);
    gridDiv.style.flex = `0 0 calc(100% / ${rowCount})`;
    gridDiv.hoverCount = 0;
+   const randomColor = randomRGBValue();
    gridDiv.addEventListener("mouseover", () => {
-   gridDiv.style.backgroundColor = randomRGBValue();
+   gridDiv.style.backgroundColor = randomColor;
    if (gridDiv.hoverCount < 10) {
       gridDiv.hoverCount++;
       gridDiv.style.opacity = gridDiv.hoverCount * 0.1;
